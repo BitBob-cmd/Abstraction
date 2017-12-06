@@ -23,9 +23,16 @@ public class Zoo {
 
         Iterator<Lebewesen> iterator = zoo.iterator();
 
+        int vb = 0;
+        int zb = 0;
         while(iterator.hasNext()){
-            System.out.println(iterator.next().gibLaut());
-
+            Lebewesen l = iterator.next();
+            if(l instanceof Vierbeiner)
+                vb++;
+            if(l instanceof Zweibeiner)
+                zb++;
+            System.out.println(l.gibLaut());
         }
+        System.out.println("Es sind " + vb + " Vierbeiner und " + zb + " Zweibeiner im Zoo.");
     }
 }
